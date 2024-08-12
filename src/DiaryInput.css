@@ -1,0 +1,25 @@
+#form--heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form--heading label{
+    padding: 2em;
+}
+
+#form--heading p{
+    color: rgb(142, 151, 151);
+    font-style: italic;
+}
+
+#form--input{
+    width: 70%;
+    background-color: #292929;
+    color: azure;
+    border: 0em;
+}
+
+#form--input:focus{
+    outline-width: 0;
+}
