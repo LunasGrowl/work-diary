@@ -18,7 +18,7 @@ const DiaryEntry = () => {
 
     return(
         <div>
-        {entry.map((entry) =>(
+        {entry.toReversed().map((entry) =>(
             <div className="content--block" id={entry.id} >
                 <div className="content--title">
                     <h3>{entry.entry_day}</h3>

@@ -42,14 +42,13 @@ const DiaryInput = () => {
 
     return(
         <div id="form--block">
-            <h2>{entry_content}</h2>
             <form onSubmit={(e)=> onSubmit(e)}>
                 <div id = "form--heading">
                     <label>What did you do?</label>
-                    <p value = {entry_day} name = "entry_day" >{currentDay}</p>
-                    <p value = {entry_date} name = "currentDate">{currentDate}</p>
+                    <p className = "form--day--display"value = {entry_day} name = "entry_day" >{currentDay}</p>
+                    <p className = "form--date--display"value = {entry_date} name = "currentDate">{currentDate}</p>
                 </div>
-                <input id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
+                <textarea autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                 <button type = "submit">Submit</button>
             </form>
         </div>
