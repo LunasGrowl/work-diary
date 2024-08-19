@@ -1,0 +1,12 @@
+#nav--bar{
+    padding: 1em;
+    border-bottom-width: 3px;
+    border-bottom-color: aqua;
+    border-bottom-style: groove;
+}
+
+#nav--bar p{
+    margin: 0;
+    font-size: x-large;
+    font-weight: 500;
+}
