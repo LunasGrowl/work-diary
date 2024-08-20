@@ -41,16 +41,23 @@ const DiaryInput = () => {
 
 
     return(
-        <div id="form--block">
+        <div id="form--block" className="w-9/12">
             <form onSubmit={(e)=> onSubmit(e)}>
-                <div id = "form--heading">
-                    <label>What did you do?</label>
-                    <p className = "form--day--display"value = {entry_day} name = "entry_day" >{currentDay}</p>
-                    <p className = "form--date--display"value = {entry_date} name = "currentDate">{currentDate}</p>
+                <div id = "form--heading" className="flex justify-between flex-row">
+                    <p className="font-semibold pt-8">What did you do?</p>
+                    <div id="form--date"className="flex" >
+                        <p className = "font-medium italic pt-8 form--day--display pr-4" value = {entry_day} name = "entry_day" >{currentDay}</p>
+                        <p className = "font-medium italic pt-8 form--date--display" value = {entry_date} name = "currentDate">{currentDate}</p>
+                    </div>
                 </div>
-                <textarea autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
-                <button type = "submit">Submit</button>
+                <div className="flex flex-col ">
+                    <textarea spellcheck="false" className="h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
+                    <div className="pt-2 flex justify-end">
+                        <button id = "form--button" type = "submit">+ Add</button>
+                    </div>
+                </div>
             </form>
+            <hr color="#343A3C"></hr>
         </div>
     )
 }

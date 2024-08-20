@@ -3,8 +3,8 @@ import "./Nav.css";
 
 const NavBar = () => {
   return (
-    <div id= "nav--bar" className='bg-zinc-800 sticky top-0' >
-      <p>Aleks Tata Diary</p>
+    <div id= "nav--bar" className='sticky top-0' >
+      <p>Tata Log</p>
     </div>
   )
 }
