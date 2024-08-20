@@ -20,11 +20,18 @@ const DiaryEntry = () => {
         <div>
         {entry.toReversed().map((entry) =>(
             <div className="content--block" id={entry.id} >
-                <div className="content--title">
-                    <h3>{entry.entry_day}</h3>
+                <div className=" content--title">
+                    <h3 className="font-semibold">{entry.entry_day}</h3>
                     <p className="content--date">{entry.entry_date}</p>
                 </div>
-                <p>{entry.entry_content}</p>
+                <div id="content--content">
+                    <p>{entry.entry_content.split("-")[0]}</p>
+                    <ul className="text-left">
+                        {entry.entry_content.split("-").slice(1).map(split =>(
+                            <li className="italic">{split}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>   
         ))}
         </div>

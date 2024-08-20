@@ -51,8 +51,9 @@ const DiaryInput = () => {
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <textarea spellcheck="false" className="h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
+                    <textarea spellcheck="false" className="text-base h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
+                        <p id = "form--notification">Entry Submitted</p>
                         <button id = "form--button" type = "submit">+ Add</button>
                     </div>
                 </div>

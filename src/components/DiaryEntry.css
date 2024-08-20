@@ -30,4 +30,5 @@
 .content--block h3{
     display: flex;
     justify-content: flex-start;
+    color: #60D2EC;
 }

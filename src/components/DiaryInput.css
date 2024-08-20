@@ -15,6 +15,32 @@
     color: #8A8A8A;
 }
 
+#form--notification{
+    opacity: 1;
+    display: inline-block;
+    background-color:#282F4D ;
+    border-radius: 8px;
+    border-width: 0;
+    color: #BEC5EB;
+    cursor: pointer;
+    display: inline-block; 
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 5px 15px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    pointer-events: none;
+    transition: opacity 500ms ease 1000ms;
+}
+
 #form--button{
       background-color: hsla(192, 22%, 26%, 0.75);
       border-radius: 8px;
