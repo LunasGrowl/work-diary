@@ -38,8 +38,16 @@ const DiaryInput = ({setChange}) => {
         e.preventDefault();
         await axios.post("http://localhost:8080/entry/add",entry);
         setChange(('1'));
+
     }
 
+    const notification = document.getElementById('form--notification');
+    function notificationPopup(){
+        notification.classList.add('fade');
+        setTimeout(() => {notification.classList.remove('fade');}, 2000);
+        
+
+    }
 
     return(
         <div id="form--block" className="w-9/12">
@@ -55,7 +63,7 @@ const DiaryInput = ({setChange}) => {
                     <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
                         <p id = "form--notification">Entry Submitted</p>
-                        <button id = "form--button" type = "submit">+ Add</button>
+                        <button onClick = {notificationPopup} id = "form--button" type = "submit">+ Add</button>
                     </div>
                 </div>
             </form>
