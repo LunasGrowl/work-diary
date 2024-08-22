@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import "./DiaryEntry.css";
 import axios from "axios"
 
-const DiaryEntry = () => {
+const DiaryEntry = ({change, setChange}) => {
 
     const [entry,setEntry] = useState([])
 
     useEffect(()=>{
-         loadEntries();
-    },[]);
+        loadEntries();
+        setChange('0')
+    
+         
+    },[change]);
 
     const loadEntries=async()=>{
         const result =await axios.get("http://localhost:8080/entry");
@@ -17,7 +20,7 @@ const DiaryEntry = () => {
     }
 
     return(
-        <div>
+        <div id = "content--container">
         {entry.toReversed().map((entry) =>(
             <div className="content--block" id={entry.id} >
                 <div className=" content--title">

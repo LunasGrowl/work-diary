@@ -19,7 +19,7 @@ function getDay(){
     return dayOfWeek[today.getDay()];
 }
 
-const DiaryInput = () => {
+const DiaryInput = ({setChange}) => {
     const[currentDate] = useState(getDate());
     const[currentDay] = useState(getDay());
     
@@ -36,7 +36,8 @@ const DiaryInput = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/entry/add",entry)
+        await axios.post("http://localhost:8080/entry/add",entry);
+        setChange(('1'));
     }
 
 
@@ -51,7 +52,7 @@ const DiaryInput = () => {
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <textarea spellcheck="false" className="text-base h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
+                    <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
                         <p id = "form--notification">Entry Submitted</p>
                         <button id = "form--button" type = "submit">+ Add</button>
