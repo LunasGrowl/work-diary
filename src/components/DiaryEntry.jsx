@@ -13,12 +13,14 @@ const DiaryEntry = ({change, setChange}) => {
          
     },[change]);
 
+    // Loads all entries from the database and creates them as components
     const loadEntries=async()=>{
         const result =await axios.get("http://localhost:8080/entry");
         setEntry(result.data)
         console.log(result.data);
     }
 
+    // Deletes an entry from the database 
     const deleteEntry = async(id)=>{
         axios.delete("http://localhost:8080/entry/"+id);
         console.log(id);
