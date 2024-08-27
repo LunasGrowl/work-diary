@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./DiaryEntry.css";
 import axios from "axios"
+import { renderToString } from "react-dom/server";
 
 const DiaryEntry = ({change, setChange}) => {
 
@@ -27,6 +28,15 @@ const DiaryEntry = ({change, setChange}) => {
         setChange('1');
     }
 
+    const editEntry = async(id)=>{
+        const content = document.getElementById(id).getElementsByTagName("p")[1];
+        const list = document.getElementById(id).getElementsByTagName("ul")[0];
+        const urlContent = renderToString(content.textContent);
+        const urlList = renderToString(list.innerText.replaceAll(/^/gm,"-"));
+        const update = urlContent + urlList
+        axios.put("http://localhost:8080/entry/"+id+"?entry_content="+update);
+    }
+
     return(
         <div className = "flex-col flex w-9/12" id = "content--container">
             {entry.toReversed().map((entry) =>(
@@ -36,7 +46,7 @@ const DiaryEntry = ({change, setChange}) => {
                             <h3 className="font-semibold">{entry.entry_day}</h3>
                             <p className="content--date">{entry.entry_date}</p>
                         </div>
-                        <div id="content--content">
+                        <div className="content--entry max-w-max" contentEditable = "true" id="content--content">
                             <p>{entry.entry_content.split("-")[0]}</p>
                             <ul className="text-left">
                                 {entry.entry_content.split("-").slice(1).map(split =>(
@@ -45,8 +55,9 @@ const DiaryEntry = ({change, setChange}) => {
                             </ul>
                         </div>
                     </div>
-                    <div className="justify-end">
-                        <span onClick = {() => deleteEntry(entry.id)} id ={entry.id} className="delete--icon material-symbols-outlined" >delete</span>
+                    <div className="flex-row  flex justify-end">
+                        <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined h-6" >save</span>
+                        <span onClick = {() => deleteEntry(entry.id)} id ={entry.id} className="delete--icon material-symbols-outlined h-6" >delete</span>
                     </div>
                 </div>  
             ))}
