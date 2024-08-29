@@ -42,22 +42,24 @@ const DiaryEntry = ({change, setChange}) => {
             {entry.toReversed().map((entry) =>(
                 <div className = "justify-between flex flex-row" id = "content--text">
                     <div className="content--block flex" id={entry.id} >
-                        <div id = "id--child"className="content--title">
-                            <h3 className="font-semibold">{entry.entry_day}</h3>
-                            <p className="content--date">{entry.entry_date}</p>
+                        <div id = "id--child"className="content--title ">
+                            <div className="flex flex-row items-center">
+                                <h3 className="font-semibold">{entry.entry_day}</h3>
+                                <p className="content--date">{entry.entry_date}</p>
+                            </div>
+                            <div className="flex-row  flex justify-end">
+                                <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined h-6" >save</span>
+                                <span onClick = {() => deleteEntry(entry.id)} id ={entry.id} className="delete--icon material-symbols-outlined h-6" >delete</span>
+                            </div>
                         </div>
                         <div className="content--entry max-w-max" contentEditable = "true" id="content--content">
-                            <p>{entry.entry_content.split("-")[0]}</p>
+                            <p className="break-words">{entry.entry_content.split("-")[0]}</p>
                             <ul className="text-left">
                                 {entry.entry_content.split("-").slice(1).map(split =>(
                                     <li className="italic">{split}</li>
                                 ))}
                             </ul>
                         </div>
-                    </div>
-                    <div className="flex-row  flex justify-end">
-                        <span onClick = {() => editEntry(entry.id)} id ={entry.id} className="edit--icon material-symbols-outlined h-6" >save</span>
-                        <span onClick = {() => deleteEntry(entry.id)} id ={entry.id} className="delete--icon material-symbols-outlined h-6" >delete</span>
                     </div>
                 </div>  
             ))}

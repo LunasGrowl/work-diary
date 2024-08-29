@@ -52,8 +52,8 @@ const DiaryInput = ({setChange}) => {
     return(
         <div id="form--block" className="w-9/12">
             <form onSubmit={(e)=> onSubmit(e)}>
-                <div id = "form--heading" className="flex justify-between flex-row">
-                    <p className="font-semibold pt-8">What did you do?</p>
+                <div id = "form--heading" className="shrink flex justify-between flex-row">
+                    <p className= "font-semibold pt-8">What did you do?</p>
                     <div id="form--date"className="flex" >
                         <p className = "font-medium italic pt-8 form--day--display pr-4" value = {entry_day} name = "entry_day" >{currentDay}</p>
                         <p className = "font-medium italic pt-8 form--date--display" value = {entry_date} name = "currentDate">{currentDate}</p>
@@ -63,7 +63,7 @@ const DiaryInput = ({setChange}) => {
                     <textarea spellCheck="false" className="text-base h-44 outline-0 resize-none rounded-xl" autoComplete = "off" id="form--input" value={entry_content} name = "entry_content" type="text" onChange={(e)=>onInputChange(e)}/>
                     <div className="pt-2 flex justify-end">
                         <p id = "form--notification">Entry Submitted</p>
-                        <button onClick = {notificationPopup} id = "form--button" type = "submit">+ Add</button>
+                        <button onClick = {notificationPopup} className = "text-lg" id = "form--button" type = "submit">+ Add</button>
                     </div>
                 </div>
             </form>

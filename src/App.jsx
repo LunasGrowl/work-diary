@@ -13,8 +13,10 @@ const App = () => {
   return (
   <div id='app--container'>
     <NavBar/>
-    <DiaryInput setChange = {setChange}/>
-    <DiaryEntry change = {change} setChange = {setChange}/>
+    <div id = "element--container" className='flex flex-col max-w-7xl mx-auto '>
+      <DiaryInput setChange = {setChange}/>
+      <DiaryEntry change = {change} setChange = {setChange}/>
+    </div>
   </div>
   )
 }
