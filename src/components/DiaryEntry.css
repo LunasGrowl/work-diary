@@ -11,11 +11,11 @@
     margin-right: auto;
 }
 
-.content--date{
+/* .content--date{
     padding-left: 45px;
     color: rgb(142, 151, 151);
     font-style: italic;
-}
+} */
 
 .content--block{
     justify-content: center;
@@ -32,14 +32,14 @@
     font-style: italic;
 }
 
-.content--block h3{
+/* .content--block h3{
     display: flex;
     justify-content: flex-start;
     font-weight: 800;
     color: #60D2EC;
-}
+} */
 
-.delete--icon{
+/* .delete--icon{
     background-color: hsla(357, 100%, 21%, 0);
     border-radius: 8px;
     cursor: pointer;
@@ -53,19 +53,19 @@
     background-color: hsl(357.14deg 100% 20.59%);
     transition-duration: 0.25s;
     color: #FFDAD6;
-}
+} */
 
-#content--text .delete--icon{
+/* #content--text .delete--icon{
     opacity: 0;
 }
 
 #content--text:hover .delete--icon{
     opacity: 1;
     transition-duration: 0.25s;
-}
+} */
 
 
-.edit--icon{
+/* .edit--icon{
     background-color: hsla(357, 100%, 21%, 0);
     border-radius: 8px;
     cursor: pointer;
@@ -88,4 +88,4 @@
 #content--text:hover .edit--icon{
     opacity: 1;
     transition-duration: 0.25s;
-}
+} */

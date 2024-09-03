@@ -2,8 +2,8 @@
 export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./index.html"
-  ],
+    "./index.html"],
+  darkMode:"selector",
   theme: {
     extend: {},
   },

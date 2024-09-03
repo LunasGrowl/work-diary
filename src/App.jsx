@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import NavBar from './components/Nav.jsx'
 import DiaryEntry from './components/DiaryEntry.jsx'
@@ -12,8 +12,8 @@ const App = () => {
 
   return (
   <div id='app--container'>
-    <NavBar/>
-    <div id = "element--container" className='flex flex-col max-w-7xl mx-auto '>
+    <NavBar />
+    <div id = "element--container" className='flex flex-col max-w-7xl mx-auto bg-white dark:bg-black '>
       <DiaryInput setChange = {setChange}/>
       <DiaryEntry change = {change} setChange = {setChange}/>
     </div>
