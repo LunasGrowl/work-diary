@@ -1,5 +1,10 @@
-# Work Diary API 
+# Java Work Diary
 
-## Week 1 
-- Setting up back end
-- Now going to start moving to react
+The work diary is a 
+
+This is the repository that works off:
+
+- SpringBoot
+- Java
+- ReactJS
+- Tailwind
